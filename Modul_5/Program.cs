@@ -60,7 +60,15 @@
 
                 }
             }
+            Console.ForegroundColor = ConsoleColor.White;
 
+            //Задание 5.1.6
+            int [] result = new int[5];
+            result = GetArrayFromConsole();
+            foreach (var element in result)
+            {
+                Console.Write($"{element} ");
+            }
         }
         static string ShowColor()
         {
@@ -68,6 +76,34 @@
             return color;
             //я до конца не понял, нужно ли было создать свой метод или использовать метод из курса
             //решил сделать свой
+        }
+
+        
+        static int[] GetArrayFromConsole()
+        {
+            var result = new int[5];
+
+            for (int i = 0; i < result.Length; i++)
+            {
+                Console.WriteLine("Введите элемент массива номер {0}", i + 1);
+                result[i] = int.Parse(Console.ReadLine());
+            }
+            int temp;
+            for (var i = 1; i < result.Length; i++)
+            {
+                for (var j = 0; j < result.Length - i; j++)
+                {
+                    if (result[j] > result[j + 1])
+                    {
+                        temp = result[j];
+                        result[j] = result[j + 1];
+                        result[j + 1] = temp;
+                    }
+                }
+            }
+            return result;
+
+
         }
     }
 }
