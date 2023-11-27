@@ -24,42 +24,6 @@
             {
                 favcolors[i] = ShowColor();
             }
-
-            Console.WriteLine("Твои любимые цвета: ");
-            int j = 0;
-            foreach(var color in favcolors)
-            {
-                j++;
-                switch(color)
-                {
-                    case "red":
-                        {
-                            Console.ForegroundColor = ConsoleColor.Red;
-                            Console.WriteLine($"{j}) {color}");
-                            break;
-
-                        }
-                    case "green":
-                        {
-                            Console.ForegroundColor= ConsoleColor.Green;
-                            Console.WriteLine($"{j}) {color}");
-                            break;
-                        }
-                    case "yellow":
-                        {
-                            Console.ForegroundColor = ConsoleColor.Yellow;
-                            Console.WriteLine($"{j}) {color}");
-                            break;
-                        }
-                    default:
-                        {
-                            Console.ForegroundColor = ConsoleColor.White;
-                            Console.WriteLine($"{j}) Неизвестный цвет"); break;
-                        }
-
-
-                }
-            }
             Console.ForegroundColor = ConsoleColor.White;
 
             //Задание 5.1.6
@@ -94,7 +58,6 @@
             anketa.age = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Ваше имя: {0}", name);
             Console.WriteLine("Ваш возраст: {0}", age);
-            Console.WriteLine($"{name}, Введи три своих любимых цвета");
             for (int i = 0; i < favcolors.Length; i++)
             {
                 favcolors[i] = ShowColor2(name);
@@ -107,30 +70,122 @@
             anketa.age = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Ваше имя: {0}", name);
             Console.WriteLine("Ваш возраст: {0}", age);
-            Console.WriteLine($"{name}, {age},\nВведи три своих любимых цвета");
             for (int i = 0; i < favcolors.Length; i++)
             {
-                favcolors[i] = ShowColor2(name);
+                favcolors[i] = ShowColor3(name, age);
             }
         }
+        static string ShowColor3(string name, int age)
+        {
+            Console.WriteLine($"{name}, {age} год, напишите свой любимый цвет на английском с маленькой буквы");
+            var color = Console.ReadLine();
 
+            switch (color)
+            {
+                case "red":
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.ForegroundColor = ConsoleColor.Black;
+
+                    Console.WriteLine("Your color is red!");
+                    break;
+
+                case "green":
+                    Console.BackgroundColor = ConsoleColor.Green;
+                    Console.ForegroundColor = ConsoleColor.Black;
+
+                    Console.WriteLine("Your color is green!");
+                    break;
+                case "cyan":
+                    Console.BackgroundColor = ConsoleColor.Cyan;
+                    Console.ForegroundColor = ConsoleColor.Black;
+
+                    Console.WriteLine("Your color is cyan!");
+                    break;
+                default:
+                    Console.BackgroundColor = ConsoleColor.Yellow;
+                    Console.ForegroundColor = ConsoleColor.Red;
+
+                    Console.WriteLine("Your color is yellow!");
+                    break;
+            }
+
+            return color;
+        }
         static string ShowColor2(string name)
         {
-            string color = Console.ReadLine();
+            Console.WriteLine($"{name}, Напишите свой любимый цвет на английском с маленькой буквы");
+            var color = Console.ReadLine();
+
+            switch (color)
+            {
+                case "red":
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.ForegroundColor = ConsoleColor.Black;
+
+                    Console.WriteLine("Your color is red!");
+                    break;
+
+                case "green":
+                    Console.BackgroundColor = ConsoleColor.Green;
+                    Console.ForegroundColor = ConsoleColor.Black;
+
+                    Console.WriteLine("Your color is green!");
+                    break;
+                case "cyan":
+                    Console.BackgroundColor = ConsoleColor.Cyan;
+                    Console.ForegroundColor = ConsoleColor.Black;
+
+                    Console.WriteLine("Your color is cyan!");
+                    break;
+                default:
+                    Console.BackgroundColor = ConsoleColor.Yellow;
+                    Console.ForegroundColor = ConsoleColor.Red;
+
+                    Console.WriteLine("Your color is yellow!");
+                    break;
+            }
+
             return color;
-            //я до конца не понял, нужно ли было создать свой метод или использовать метод из курса
-            //решил сделать свой
         }
 
         static string ShowColor()
         {
-            string color = Console.ReadLine();
+            Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
+            var color = Console.ReadLine();
+
+            switch (color)
+            {
+                case "red":
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.ForegroundColor = ConsoleColor.Black;
+
+                    Console.WriteLine("Your color is red!");
+                    break;
+
+                case "green":
+                    Console.BackgroundColor = ConsoleColor.Green;
+                    Console.ForegroundColor = ConsoleColor.Black;
+
+                    Console.WriteLine("Your color is green!");
+                    break;
+                case "cyan":
+                    Console.BackgroundColor = ConsoleColor.Cyan;
+                    Console.ForegroundColor = ConsoleColor.Black;
+
+                    Console.WriteLine("Your color is cyan!");
+                    break;
+                default:
+                    Console.BackgroundColor = ConsoleColor.Yellow;
+                    Console.ForegroundColor = ConsoleColor.Red;
+
+                    Console.WriteLine("Your color is yellow!");
+                    break;
+            }
+
             return color;
-            //я до конца не понял, нужно ли было создать свой метод или использовать метод из курса
-            //решил сделать свой
         }
 
-        
+
         static int[] GetArrayFromConsole()
         {
             var result = new int[5];
