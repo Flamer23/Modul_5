@@ -104,8 +104,19 @@
             //Задание 5.2.18
             result = GetArrayFromConsole2(10);
             ShowArray(result);
-        }
 
+            //Задание 5.3.1
+            var someAge = 21;
+            Console.WriteLine(someAge.ToString());
+            GetAge(someAge);
+            Console.WriteLine(someAge);
+        }
+        static void GetAge(int age)
+        {
+            Console.WriteLine("Введите возраст");
+            age = Convert.ToInt32(Console.ReadLine());
+
+        }
         static void ShowArray(int[] array, bool isSort = false)
         {
             var temp = array;
