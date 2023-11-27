@@ -100,6 +100,10 @@
             //Задание 5.2.17
             result = GetArrayFromConsole();
             ShowArray(result);
+
+            //Задание 5.2.18
+            result = GetArrayFromConsole2(10);
+            ShowArray(result);
         }
 
         static void ShowArray(int[] array, bool isSort = false)
