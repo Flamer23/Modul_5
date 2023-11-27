@@ -99,6 +99,19 @@
             {
                 favcolors[i] = ShowColor2(name);
             }
+
+            //Задание 5.2.7
+            Console.Write("Введите имя: ");
+            anketa.name = Console.ReadLine();
+            Console.Write("Введите возраст с цифрами: ");
+            anketa.age = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ваше имя: {0}", name);
+            Console.WriteLine("Ваш возраст: {0}", age);
+            Console.WriteLine($"{name}, {age},\nВведи три своих любимых цвета");
+            for (int i = 0; i < favcolors.Length; i++)
+            {
+                favcolors[i] = ShowColor2(name);
+            }
         }
 
         static string ShowColor2(string name)
