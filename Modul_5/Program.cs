@@ -98,6 +98,21 @@
             }
 
             //Задание 5.2.17
+            result = GetArrayFromConsole();
+            ShowArray(result);
+        }
+
+        static void ShowArray(int[] array, bool isSort = false)
+        {
+            var temp = array;
+            if (isSort)
+            {
+                temp = SortArray(array);
+            }
+            foreach (var element in temp)
+            {
+                Console.WriteLine(element);
+            }
         }
         static string ShowColor3(string name, int age)
         {
