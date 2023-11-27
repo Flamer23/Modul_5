@@ -69,7 +69,32 @@
             {
                 Console.Write($"{element} ");
             }
+
+
+            //Задание 5.2.2
+            (string name, int age) anketa;
+
+            Console.Write("Введите имя: ");
+            anketa.name = Console.ReadLine();
+            Console.Write("Введите возраст с цифрами: ");
+            anketa.age = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ваше имя: {0}", anketa.name);
+            Console.WriteLine("Ваш возраст: {0}", anketa.age);
+            Console.WriteLine("Введи три своих любимых цвета");
+            for (int i = 0; i < favcolors.Length; i++)
+            {
+                favcolors[i] = ShowColor2(anketa.name);
+            }
         }
+
+        static string ShowColor2(string name)
+        {
+            string color = Console.ReadLine();
+            return color;
+            //я до конца не понял, нужно ли было создать свой метод или использовать метод из курса
+            //решил сделать свой
+        }
+
         static string ShowColor()
         {
             string color = Console.ReadLine();
