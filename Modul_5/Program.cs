@@ -82,7 +82,8 @@
             }
 
             //Задание 5.2.14
-            result = GetArrayFromConsole2(5);
+            int num = 5;
+            result = GetArrayFromConsole2(ref num);
             result = SortArray(result);
             foreach (var element in result)
             {
@@ -90,7 +91,7 @@
             }
 
             //Задание 5.2.15
-            result = GetArrayFromConsole2();
+            result = GetArrayFromConsole2(ref num);
             result = SortArray(result);
             foreach (var element in result)
             {
@@ -102,16 +103,25 @@
             ShowArray(result);
 
             //Задание 5.2.18
-            result = GetArrayFromConsole2(10);
+            result = GetArrayFromConsole2(ref num);
             ShowArray(result);
 
             //Задание 5.3.1
             var someAge = 21;
             Console.WriteLine(someAge.ToString());
-            GetAge(someAge);
+            ChangeAge(ref someAge);
             Console.WriteLine(someAge);
+
+            //Задание 5.3.8
+            num = 6;
+            result = GetArrayFromConsole2(ref num);
+            result = SortArray(result);
+            foreach (var element in result)
+            {
+                Console.Write($"{element} ");
+            }
         }
-        static void GetAge(int age)
+        static void ChangeAge(ref int age)
         {
             Console.WriteLine("Введите возраст");
             age = Convert.ToInt32(Console.ReadLine());
@@ -238,7 +248,7 @@
             return color;
         }
 
-        static int[] GetArrayFromConsole2(int num = 5)
+        static int[] GetArrayFromConsole2(ref int num)
         {
             var result = new int[num];
 
