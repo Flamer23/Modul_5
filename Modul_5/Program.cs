@@ -80,6 +80,24 @@
             {
                 Console.Write($"{element} ");
             }
+
+            //Задание 5.2.14
+            result = GetArrayFromConsole2(5);
+            result = SortArray(result);
+            foreach (var element in result)
+            {
+                Console.Write($"{element} ");
+            }
+
+            //Задание 5.2.15
+            result = GetArrayFromConsole2();
+            result = SortArray(result);
+            foreach (var element in result)
+            {
+                Console.Write($"{element} ");
+            }
+
+            //Задание 5.2.17
         }
         static string ShowColor3(string name, int age)
         {
@@ -190,7 +208,17 @@
             return color;
         }
 
+        static int[] GetArrayFromConsole2(int num = 5)
+        {
+            var result = new int[num];
 
+            for (int i = 0; i < result.Length; i++)
+            {
+                Console.WriteLine("Введите элемент массива номер {0}", i + 1);
+                result[i] = int.Parse(Console.ReadLine());
+            }
+            return result;
+        }
         static int[] GetArrayFromConsole()
         {
             var result = new int[5];
