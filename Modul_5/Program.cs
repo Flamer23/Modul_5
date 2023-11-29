@@ -137,6 +137,30 @@
             Console.WriteLine("Укажите глубину эха");
             var deep = Convert.ToInt32(Console.ReadLine());
             Echo(frase, deep);
+
+            //Задание 5.5.8
+            Console.WriteLine("Введите число и степень");
+            int n = Convert.ToInt32(Console.ReadLine());
+            byte pow = Convert.ToByte(Console.ReadLine());
+            Console.WriteLine(PowerUp(n, pow));
+        }
+        private static int PowerUp(int N, byte pow)
+        {
+            if (pow == 0)
+            {
+                return 1;
+            }
+            else
+            {
+                if (pow == 1)
+                {
+                    return N;
+                }
+                else
+                {
+                    return N * PowerUp(N, --pow);
+                }
+            }
         }
         static void Echo (string frase, int deep)
         {
