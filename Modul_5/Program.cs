@@ -130,6 +130,27 @@
 
             Console.WriteLine("Sorted Descending: " + string.Join(", ", sortedDesc));
             Console.WriteLine("Sorted Ascending: " + string.Join(", ", sortedAsc));
+
+            //Задание 5.5.3
+            Console.WriteLine("Введите любую фразу");
+            var frase = Console.ReadLine();
+            Console.WriteLine("Укажите глубину эха");
+            var deep = Convert.ToInt32(Console.ReadLine());
+            Echo(frase, deep);
+        }
+        static void Echo (string frase, int deep)
+        {
+            string modif = frase;
+            if (modif.Length > 2)
+            {
+                modif = modif.Remove(0, 2);
+            }
+            Console.BackgroundColor = (ConsoleColor)deep;
+            Console.WriteLine("..." + modif);
+            if (deep > 1)
+            {
+                Echo(modif, deep - 1);
+            }
         }
         static void SortArray2(in int[] array, out int[] sortedDesc, out int[] sortedAsc)
         {
@@ -156,7 +177,6 @@
             }
             return sorted;
         }
-
         static int[] SortArrayAsc(int[] array)
         {
 
@@ -303,7 +323,6 @@
 
             return color;
         }
-
         static int[] GetArrayFromConsole2(ref int num)
         {
             var result = new int[num];
@@ -326,7 +345,6 @@
             }
             return result;
         }
-
         static int[] SortArray(int[] result)
         {
             int temp;
